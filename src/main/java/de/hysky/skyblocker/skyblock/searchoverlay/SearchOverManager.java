@@ -73,13 +73,14 @@ public class SearchOverManager {
     }
 
     private static void registerSearchCommands(CommandDispatcher<FabricClientCommandSource> dispatcher, CommandRegistryAccess registryAccess) {
-        if (SkyblockerConfigManager.get().uiAndVisuals.searchOverlay.enableCommands) {
+        if (SkyblockerConfigManager.get().uiAndVisuals.searchOverlay.enableAhCommand) {
             dispatcher.register(literal("ahs").executes(context -> startCommand(true, "")));
-            dispatcher.register(literal("bzs").executes(context -> startCommand(false, "")));
-
 			dispatcher.register(literal("ahs").then(argument("item", StringArgumentType.greedyString())
 				.executes(context -> startCommand(true, StringArgumentType.getString(context, "item"))
 			)));
+        }
+        if (SkyblockerConfigManager.get().uiAndVisuals.searchOverlay.enableBzCommand) {
+            dispatcher.register(literal("bzs").executes(context -> startCommand(false, "")));
 			dispatcher.register(literal("bzs").then(argument("item", StringArgumentType.greedyString())
 				.executes(context -> startCommand(false, StringArgumentType.getString(context, "item"))
 			)));

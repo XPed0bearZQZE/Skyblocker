@@ -318,7 +318,9 @@ public class UIAndVisualsConfig {
 
 		public int historyLength = 3;
 
-		public boolean enableCommands = false;
+		public boolean enableAhCommand = false;
+
+		public boolean enableBzCommand = false;
 
 		public List<String> bazaarHistory = new ArrayList<>();
 

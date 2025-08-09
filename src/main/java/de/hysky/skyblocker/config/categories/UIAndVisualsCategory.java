@@ -553,11 +553,19 @@ public class UIAndVisualsCategory {
                                 .controller(IntegerController.createBuilder().range(0, 5).slider(1).build())
                                 .build())
                         .option(Option.<Boolean>createBuilder()
-                                .name(Text.translatable("skyblocker.config.uiAndVisuals.searchOverlay.enableCommands"))
-                                .description(Text.translatable("skyblocker.config.uiAndVisuals.searchOverlay.enableCommands.@Tooltip"))
-                                .binding(defaults.uiAndVisuals.searchOverlay.enableCommands,
-                                        () -> config.uiAndVisuals.searchOverlay.enableCommands,
-                                        newValue -> config.uiAndVisuals.searchOverlay.enableCommands = newValue)
+                                .name(Text.translatable("skyblocker.config.uiAndVisuals.searchOverlay.enableAhCommand"))
+                                .description(Text.translatable("skyblocker.config.uiAndVisuals.searchOverlay.enableAhCommand.@Tooltip"))
+                                .binding(defaults.uiAndVisuals.searchOverlay.enableAhCommand,
+                                        () -> config.uiAndVisuals.searchOverlay.enableAhCommand,
+                                        newValue -> config.uiAndVisuals.searchOverlay.enableAhCommand = newValue)
+                                .controller(ConfigUtils.createBooleanController())
+                                .build())
+                        .option(Option.<Boolean>createBuilder()
+                                .name(Text.translatable("skyblocker.config.uiAndVisuals.searchOverlay.enableBzCommand"))
+                                .description(Text.translatable("skyblocker.config.uiAndVisuals.searchOverlay.enableBzCommand.@Tooltip"))
+                                .binding(defaults.uiAndVisuals.searchOverlay.enableBzCommand,
+                                        () -> config.uiAndVisuals.searchOverlay.enableBzCommand,
+                                        newValue -> config.uiAndVisuals.searchOverlay.enableBzCommand = newValue)
                                 .controller(ConfigUtils.createBooleanController())
                                 .build())
                         .build())
